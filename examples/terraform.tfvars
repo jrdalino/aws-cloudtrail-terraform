@@ -5,7 +5,7 @@ aws_role    = "OrganizationAccountAccessRole"
 
 # Tagging
 namespace       = "bbsdm"
-bounded_context = "organisation"
+bounded_context = "shared"
 environment     = "production"
 
 # Cloudtrail
