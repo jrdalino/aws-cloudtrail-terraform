@@ -57,7 +57,7 @@ resource "aws_s3_bucket" "this" {
                 "Service": "cloudtrail.amazonaws.com"
             },
             "Action": "s3:GetBucketAcl",
-            "Resource": "arn:aws:s3:::623552185285-ap-southeast-1-cloudtrail"
+            "Resource": "arn:aws:s3:::${var.aws_account}-${var.aws_region}-cloudtrail"
         },
         {
             "Sid": "AWSCloudTrailWrite",
@@ -67,7 +67,7 @@ resource "aws_s3_bucket" "this" {
             },
             "Action": "s3:PutObject",
             "Resource": [
-                "arn:aws:s3:::623552185285-ap-southeast-1-cloudtrail/prefix/AWSLogs/623552185285/*"
+                "arn:aws:s3:::${var.aws_account}-${var.aws_region}-cloudtrail/prefix/AWSLogs/${var.aws_account}/*"
             ],
             "Condition": {
                 "StringEquals": {
